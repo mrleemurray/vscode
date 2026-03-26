@@ -86,7 +86,8 @@ export interface IAICustomizationListItem {
 	readonly name: string;
 	readonly filename: string;
 	readonly description?: string;
-	readonly storage: PromptsStorage;
+	/** Storage origin. Set by core when items come from promptsService; omitted for external provider items. */
+	readonly storage?: PromptsStorage;
 	readonly promptType: PromptsType;
 	/** When set, overrides `storage` for display grouping purposes. */
 	readonly groupKey?: string;
@@ -347,19 +348,24 @@ class AICustomizationItemRenderer implements IListRenderer<IFileItemEntry, IAICu
 		}
 
 		// Inline action bar from menu
-		const context = {
+		const context: Record<string, unknown> = {
 			uri: element.uri.toString(),
 			name: element.name,
 			promptType: element.promptType,
-			storage: element.storage,
 		};
+		if (element.storage) {
+			context.storage = element.storage;
+		}
 
 		// Create scoped context key service with item-specific keys for when-clause filtering
-		const overlay = this.contextKeyService.createOverlay([
+		const overlayEntries: [string, string][] = [
 			[AI_CUSTOMIZATION_ITEM_TYPE_KEY, element.promptType],
-			[AI_CUSTOMIZATION_ITEM_STORAGE_KEY, element.storage],
 			[AI_CUSTOMIZATION_ITEM_URI_KEY, element.uri.toString()],
-		]);
+		];
+		if (element.storage) {
+			overlayEntries.push([AI_CUSTOMIZATION_ITEM_STORAGE_KEY, element.storage]);
+		}
+		const overlay = this.contextKeyService.createOverlay(overlayEntries);
 
 		const menu = templateData.elementDisposables.add(
 			this.menuService.createMenu(AICustomizationManagementItemMenuId, overlay)
@@ -642,19 +648,24 @@ export class AICustomizationListWidget extends Disposable {
 		const item = e.element.item;
 
 		// Create context for the menu actions
-		const context = {
+		const context: Record<string, unknown> = {
 			uri: item.uri.toString(),
 			name: item.name,
 			promptType: item.promptType,
-			storage: item.storage,
 		};
+		if (item.storage) {
+			context.storage = item.storage;
+		}
 
 		// Create scoped context key service with item-specific keys for when-clause filtering
-		const overlay = this.contextKeyService.createOverlay([
+		const overlayEntries: [string, string][] = [
 			[AI_CUSTOMIZATION_ITEM_TYPE_KEY, item.promptType],
-			[AI_CUSTOMIZATION_ITEM_STORAGE_KEY, item.storage],
 			[AI_CUSTOMIZATION_ITEM_URI_KEY, item.uri.toString()],
-		]);
+		];
+		if (item.storage) {
+			overlayEntries.push([AI_CUSTOMIZATION_ITEM_STORAGE_KEY, item.storage]);
+		}
+		const overlay = this.contextKeyService.createOverlay(overlayEntries);
 
 		// Get menu actions, excluding inline actions to avoid duplicates
 		const actions = this.menuService.getMenuActions(AICustomizationManagementItemMenuId, overlay, {
@@ -1132,9 +1143,10 @@ export class AICustomizationListWidget extends Disposable {
 			items.push(...builtinItems.map(mapToListItem));
 		}
 
-		// Apply storage source filter (removes items not in visible sources or excluded user roots)
+		// Apply storage source filter (removes items not in visible sources or excluded user roots).
+		// All items in this path come from promptsService and have a storage value.
 		const filter = this.workspaceService.getStorageSourceFilter(promptType);
-		const filteredItems = applyStorageSourceFilter(items, filter);
+		const filteredItems = applyStorageSourceFilter(items as (IAICustomizationListItem & { readonly storage: PromptsStorage })[], filter);
 		items.length = 0;
 		items.push(...filteredItems);
 
@@ -1179,7 +1191,6 @@ export class AICustomizationListWidget extends Disposable {
 				name: item.name,
 				filename: basename(item.uri),
 				description: item.description,
-				storage: PromptsStorage.local,
 				promptType,
 			}))
 			.sort((a, b) => a.name.localeCompare(b.name));
@@ -1259,7 +1270,7 @@ export class AICustomizationListWidget extends Disposable {
 		].filter(g => visibleSources.has(g.groupKey as PromptsStorage) || g.groupKey === 'agents');
 
 		for (const item of matchedItems) {
-			const key = item.groupKey ?? item.storage;
+			const key = item.groupKey ?? item.storage ?? PromptsStorage.local;
 			const group = groups.find(g => g.groupKey === key);
 			if (group) {
 				group.items.push(item);
