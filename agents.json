@@ -1,0 +1,123 @@
+[
+	{
+		"window": "agents",
+		"id": "run-tasks",
+		"title": "Run/tasks dropdown",
+		"opacity": 50,
+		"before": "agents/run-tasks-before.png",
+		"after": "agents/run-tasks-after.png",
+		"comparison": "agents/run-tasks-comparison.png",
+		"fullBefore": "agents/full/run-tasks-before.png",
+		"fullAfter": "agents/full/run-tasks-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "provider",
+		"title": "Provider picker - 50% example",
+		"opacity": 50,
+		"before": "agents/provider-before.png",
+		"after": "agents/provider-after.png",
+		"comparison": "agents/provider-comparison.png",
+		"fullBefore": "agents/full/provider-before.png",
+		"fullAfter": "agents/full/provider-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "provider-default",
+		"title": "Provider picker - 92% default",
+		"opacity": 92,
+		"before": "agents/provider-default-before.png",
+		"after": "agents/provider-default-after.png",
+		"comparison": "agents/provider-default-comparison.png",
+		"fullBefore": "agents/full/provider-default-before.png",
+		"fullAfter": "agents/full/provider-default-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "agent",
+		"title": "Custom-agent picker",
+		"opacity": 50,
+		"before": "agents/agent-before.png",
+		"after": "agents/agent-after.png",
+		"comparison": "agents/agent-comparison.png",
+		"fullBefore": "agents/full/agent-before.png",
+		"fullAfter": "agents/full/agent-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "models-flat",
+		"title": "Model picker",
+		"opacity": 50,
+		"before": "agents/models-flat-before.png",
+		"after": "agents/models-flat-after.png",
+		"comparison": "agents/models-flat-comparison.png",
+		"fullBefore": "agents/full/models-flat-before.png",
+		"fullAfter": "agents/full/models-flat-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "models-tabbed",
+		"title": "Tabbed model picker",
+		"opacity": 50,
+		"before": "agents/models-tabbed-before.png",
+		"after": "agents/models-tabbed-after.png",
+		"comparison": "agents/models-tabbed-comparison.png",
+		"fullBefore": "agents/full/models-tabbed-before.png",
+		"fullAfter": "agents/full/models-tabbed-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "mode",
+		"title": "Mode picker",
+		"opacity": 50,
+		"before": "agents/mode-before.png",
+		"after": "agents/mode-after.png",
+		"comparison": "agents/mode-comparison.png",
+		"fullBefore": "agents/full/mode-before.png",
+		"fullAfter": "agents/full/mode-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "permissions",
+		"title": "Permission picker",
+		"opacity": 50,
+		"before": "agents/permissions-before.png",
+		"after": "agents/permissions-after.png",
+		"comparison": "agents/permissions-comparison.png",
+		"fullBefore": "agents/full/permissions-before.png",
+		"fullAfter": "agents/full/permissions-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "workspace",
+		"title": "Workspace picker",
+		"opacity": 50,
+		"before": "agents/workspace-before.png",
+		"after": "agents/workspace-after.png",
+		"comparison": "agents/workspace-comparison.png",
+		"fullBefore": "agents/full/workspace-before.png",
+		"fullAfter": "agents/full/workspace-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "branch",
+		"title": "Branch picker",
+		"opacity": 50,
+		"before": "agents/branch-before.png",
+		"after": "agents/branch-after.png",
+		"comparison": "agents/branch-comparison.png",
+		"fullBefore": "agents/full/branch-before.png",
+		"fullAfter": "agents/full/branch-after.png"
+	},
+	{
+		"window": "agents",
+		"id": "remote-submenu",
+		"title": "Workspace remote submenu",
+		"opacity": 50,
+		"before": "agents/remote-submenu-before.png",
+		"after": "agents/remote-submenu-after.png",
+		"comparison": "agents/remote-submenu-comparison.png",
+		"fullBefore": "agents/full/remote-submenu-before.png",
+		"fullAfter": "agents/full/remote-submenu-after.png"
+	}
+]

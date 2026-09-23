@@ -1,0 +1,112 @@
+[
+	{
+		"window": "editor",
+		"id": "context-menu",
+		"title": "Explorer context menu",
+		"opacity": 50,
+		"before": "editor/context-menu-before.png",
+		"after": "editor/context-menu-after.png",
+		"comparison": "editor/context-menu-comparison.png",
+		"fullBefore": "editor/full/context-menu-before.png",
+		"fullAfter": "editor/full/context-menu-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "editor-context-menu",
+		"title": "Editor context menu over source code",
+		"opacity": 50,
+		"before": "editor/editor-context-menu-before.png",
+		"after": "editor/editor-context-menu-after.png",
+		"comparison": "editor/editor-context-menu-comparison.png",
+		"fullBefore": "editor/full/editor-context-menu-before.png",
+		"fullAfter": "editor/full/editor-context-menu-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "toolbar-menu",
+		"title": "Toolbar dropdown",
+		"opacity": 50,
+		"before": "editor/toolbar-menu-before.png",
+		"after": "editor/toolbar-menu-after.png",
+		"comparison": "editor/toolbar-menu-comparison.png",
+		"fullBefore": "editor/full/toolbar-menu-before.png",
+		"fullAfter": "editor/full/toolbar-menu-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "nested-menu",
+		"title": "Nested Themes menu",
+		"opacity": 50,
+		"before": "editor/nested-menu-before.png",
+		"after": "editor/nested-menu-after.png",
+		"comparison": "editor/nested-menu-comparison.png",
+		"fullBefore": "editor/full/nested-menu-before.png",
+		"fullAfter": "editor/full/nested-menu-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "agent",
+		"title": "Agent picker",
+		"opacity": 50,
+		"before": "editor/agent-before.png",
+		"after": "editor/agent-after.png",
+		"comparison": "editor/agent-comparison.png",
+		"fullBefore": "editor/full/agent-before.png",
+		"fullAfter": "editor/full/agent-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "models-flat",
+		"title": "Model picker",
+		"opacity": 50,
+		"before": "editor/models-flat-before.png",
+		"after": "editor/models-flat-after.png",
+		"comparison": "editor/models-flat-comparison.png",
+		"fullBefore": "editor/full/models-flat-before.png",
+		"fullAfter": "editor/full/models-flat-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "models-tabbed",
+		"title": "Tabbed model picker",
+		"opacity": 50,
+		"before": "editor/models-tabbed-before.png",
+		"after": "editor/models-tabbed-after.png",
+		"comparison": "editor/models-tabbed-comparison.png",
+		"fullBefore": "editor/full/models-tabbed-before.png",
+		"fullAfter": "editor/full/models-tabbed-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "permissions",
+		"title": "Permission picker",
+		"opacity": 50,
+		"before": "editor/permissions-before.png",
+		"after": "editor/permissions-after.png",
+		"comparison": "editor/permissions-comparison.png",
+		"fullBefore": "editor/full/permissions-before.png",
+		"fullAfter": "editor/full/permissions-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "command-palette",
+		"title": "Command Palette - 50% example",
+		"opacity": 50,
+		"before": "editor/command-palette-before.png",
+		"after": "editor/command-palette-after.png",
+		"comparison": "editor/command-palette-comparison.png",
+		"fullBefore": "editor/full/command-palette-before.png",
+		"fullAfter": "editor/full/command-palette-after.png"
+	},
+	{
+		"window": "editor",
+		"id": "command-palette-default",
+		"title": "Command Palette - 92% default",
+		"opacity": 92,
+		"before": "editor/command-palette-default-before.png",
+		"after": "editor/command-palette-default-after.png",
+		"comparison": "editor/command-palette-default-comparison.png",
+		"fullBefore": "editor/full/command-palette-default-before.png",
+		"fullAfter": "editor/full/command-palette-default-after.png"
+	}
+]
